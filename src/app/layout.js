@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const interFont = Inter({
   subsets: ["latin"],
@@ -19,7 +20,13 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <Navbar></Navbar>
-        {children}
+
+        <main className="mx-auto max-w-7xl w-full px-5 py-10">
+          {children}
+        </main>
+
+        <Footer></Footer>
+
       </body>
     </html>
   );

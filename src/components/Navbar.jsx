@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
-import { Link, Button } from "@heroui/react";
+
 import Image from "next/image";
 import NavLinks from "./NavLinks";
 import NavRight from "./NavRight";
+import Link from "next/link";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,12 +45,15 @@ const Navbar = () => {
                     </button>
 
                     <div className="flex items-center gap-3">
-                        <Image
-                            src={"/sunCart-logo.svg"}
-                            width={130}
-                            height={32}
-                            alt="Site Logo"
-                        />
+                        <Link href={"/"}>
+                            <Image
+                                src={"/sunCart-logo.svg"}
+                                width={130}
+                                height={32}
+                                alt="Site Logo"
+                                className="w-25 sm:w-32.5 h-auto"
+                            />
+                        </Link>
                     </div>
                 </div>
 
