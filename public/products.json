@@ -7,7 +7,7 @@
         "rating": 4.8,
         "stock": 15,
         "description": "Timeless aviator sunglasses with UV protection",
-        "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop",
+        "image": "https://i.ibb.co.com/R4NCXxyC/1-sunglass.jpg",
         "category": "Accessories"
     },
     {
@@ -18,7 +18,7 @@
         "rating": 4.9,
         "stock": 25,
         "description": "Water-resistant broad spectrum sunscreen",
-        "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop",
+        "image": "https://i.ibb.co.com/pFMzLf5/2-sunscreen.jpg",
         "category": "Skincare"
     },
     {
@@ -29,7 +29,7 @@
         "rating": 4.7,
         "stock": 12,
         "description": "Wide-brim straw hat perfect for beach days",
-        "image": "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=400&h=400&fit=crop",
+        "image": "https://i.ibb.co.com/PG7SsS6f/3-hat.jpg",
         "category": "Accessories"
     },
     {
@@ -40,7 +40,7 @@
         "rating": 4.6,
         "stock": 8,
         "description": "Lightweight floral dress for summer",
-        "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=400&fit=crop",
+        "image": "https://i.ibb.co.com/0p4Q7qqr/4-dress.jpg",
         "category": "Clothing"
     },
     {
@@ -51,7 +51,7 @@
         "rating": 4.5,
         "stock": 20,
         "description": "Soft, absorbent beach towel set of 2",
-        "image": "https://images.unsplash.com/photo-1635352558665-0b01650e9b84",
+        "image": "https://i.ibb.co.com/yBk23ctY/5-towel.jpg",
         "category": "Accessories"
     },
     {
@@ -62,7 +62,7 @@
         "rating": 4.7,
         "stock": 18,
         "description": "Quick-dry swim shorts with tropical print",
-        "image": "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=400&fit=crop",
+        "image": "https://i.ibb.co.com/C32BP0sY/6-shorts.jpg",
         "category": "Clothing"
     },
     {
@@ -73,7 +73,7 @@
         "rating": 4.9,
         "stock": 10,
         "description": "High-performance polarized sunglasses",
-        "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&h=400&fit=crop",
+        "image": "https://i.ibb.co.com/MySbf272/7-sunglass.jpg",
         "category": "Accessories"
     },
     {
@@ -84,7 +84,7 @@
         "rating": 4.6,
         "stock": 30,
         "description": "Refreshing facial mist with aloe vera",
-        "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop",
+        "image": "https://i.ibb.co.com/nsZCTXx4/8-face-mist.jpg",
         "category": "Skincare"
     },
     {
@@ -95,7 +95,7 @@
         "rating": 4.4,
         "stock": 22,
         "description": "Spacious waterproof tote for beach essentials",
-        "image": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=400&fit=crop",
+        "image": "https://i.ibb.co.com/sfdGVsh/9-bag.jpg",
         "category": "Accessories"
     }
 ]
