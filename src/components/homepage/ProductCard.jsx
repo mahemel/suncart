@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
                 />
             </div>
 
-            <div className="flex items-center gap-1 text-lg glass-bg z-10 absolute top-2 right-2 px-2 text-orange-500">
+            <div className="flex items-center gap-1 text-lg glass-bg z-10 absolute top-2 right-2 px-2 text-orange-500 rounded-full">
                 <FaStar></FaStar> {product.rating}
             </div>
 
