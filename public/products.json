@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "name": "Classic Aviator Sunglasses",
+        "brand": "SunShield",
+        "price": 89.99,
+        "rating": 4.8,
+        "stock": 15,
+        "description": "Timeless aviator sunglasses with UV protection",
+        "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop",
+        "category": "Accessories"
+    },
+    {
+        "id": 2,
+        "name": "SPF 50 Sunscreen Lotion",
+        "brand": "SunShield",
+        "price": 24.99,
+        "rating": 4.9,
+        "stock": 25,
+        "description": "Water-resistant broad spectrum sunscreen",
+        "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop",
+        "category": "Skincare"
+    },
+    {
+        "id": 3,
+        "name": "Beach Straw Hat",
+        "brand": "BeachWave",
+        "price": 34.99,
+        "rating": 4.7,
+        "stock": 12,
+        "description": "Wide-brim straw hat perfect for beach days",
+        "image": "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=400&h=400&fit=crop",
+        "category": "Accessories"
+    },
+    {
+        "id": 4,
+        "name": "Floral Summer Dress",
+        "brand": "SummerStyle",
+        "price": 59.99,
+        "rating": 4.6,
+        "stock": 8,
+        "description": "Lightweight floral dress for summer",
+        "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=400&fit=crop",
+        "category": "Clothing"
+    },
+    {
+        "id": 5,
+        "name": "Beach Towel Set",
+        "brand": "BeachWave",
+        "price": 39.99,
+        "rating": 4.5,
+        "stock": 20,
+        "description": "Soft, absorbent beach towel set of 2",
+        "image": "https://images.unsplash.com/photo-1608447185326-f393c4cf95ca?w=400&h=400&fit=crop",
+        "category": "Accessories"
+    },
+    {
+        "id": 6,
+        "name": "Tropical Swim Shorts",
+        "brand": "TropicGear",
+        "price": 44.99,
+        "rating": 4.7,
+        "stock": 18,
+        "description": "Quick-dry swim shorts with tropical print",
+        "image": "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=400&fit=crop",
+        "category": "Clothing"
+    },
+    {
+        "id": 7,
+        "name": "Polarized Sport Sunglasses",
+        "brand": "SunShield",
+        "price": 119.99,
+        "rating": 4.9,
+        "stock": 10,
+        "description": "High-performance polarized sunglasses",
+        "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&h=400&fit=crop",
+        "category": "Accessories"
+    },
+    {
+        "id": 8,
+        "name": "Hydrating Face Mist",
+        "brand": "SummerStyle",
+        "price": 18.99,
+        "rating": 4.6,
+        "stock": 30,
+        "description": "Refreshing facial mist with aloe vera",
+        "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop",
+        "category": "Skincare"
+    },
+    {
+        "id": 9,
+        "name": "Waterproof Beach Bag",
+        "brand": "BeachWave",
+        "price": 29.99,
+        "rating": 4.4,
+        "stock": 22,
+        "description": "Spacious waterproof tote for beach essentials",
+        "image": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=400&fit=crop",
+        "category": "Accessories"
+    }
+]

@@ -10,7 +10,7 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <nav className="sticky top-0 z-40 w-full border-b border-black/10">
+        <nav className="sticky top-0 z-40 w-full border-b border-black/10 bg-white">
             <header className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
                 <div className="flex items-center gap-2">
                     <button
