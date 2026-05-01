@@ -11,7 +11,7 @@ import {
 
 const TopBrands = () => {
     return (
-        <div className="relative pt-15 pb-10">
+        <div className="relative pt-15">
             <div className="relative">
                 <div className="flex justify-center mb-2 ">
                     <h2 className="text-center text-3xl font-black bg-linear-to-r from-yellow-700 via-orange-500 to-purple-700 text-transparent bg-clip-text">

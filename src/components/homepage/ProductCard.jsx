@@ -20,8 +20,9 @@ const ProductCard = ({ product }) => {
                 />
             </div>
 
-            <div className="flex items-center gap-1 text-lg glass-bg z-10 absolute top-2 right-2 px-2 text-orange-500 rounded-full">
-                <FaStar></FaStar> {product.rating}
+            <div className="flex items-center gap-1 text-lg glass-bg z-10 absolute top-2 right-2 px-2 py-1 text-orange-500 rounded-full">
+                <FaStar></FaStar>
+                <span className="text-sm">{product.rating}</span>
             </div>
 
             <div className="glass-bg relative p-4">

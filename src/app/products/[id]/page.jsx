@@ -71,7 +71,7 @@ const ProductsDetailPage = async ({ params }) => {
                         {product.stock > 15 ? (
                             <span className="text-green-600 font-semibold flex items-center gap-2">
                                 <FaCheck />
-                                In Stock {product.stock} available
+                                In Stock ({product.stock} available)
                             </span>
                         ) : (
                             <span className="text-purple-600 font-semibold flex items-center gap-2">
