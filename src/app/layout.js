@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${interFont.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col overflow-x-hidden">
         <Navbar></Navbar>
 
         <main className="mx-auto max-w-7xl w-full px-5 py-10">
