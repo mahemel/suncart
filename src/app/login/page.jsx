@@ -1,4 +1,6 @@
 "use client";
+import LoginWithGoogle from "@/components/LoginWithGoogle";
+import { authClient } from "@/lib/auth-client";
 import {
     Button,
     FieldError,
@@ -8,17 +10,46 @@ import {
     Label,
     TextField,
 } from "@heroui/react";
+import Link from "next/link";
+import { redirect } from "next/navigation";
 import { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
 import { IoIosEyeOff } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
 import { MdSunny } from "react-icons/md";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const onSubmit = (event) => {
-        event.preventDefault();
+
+    const [isLoading, setIsLoading] = useState(false);
+
+    const onSubmit = async (e) => {
+        e.preventDefault();
+
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        const { data, error } = await authClient.signIn.email({
+            email,
+            password,
+        });
+
+        // console.log(data, error);
+        if (!error) {
+            redirect("/");
+        }
+
+        if (error?.message) {
+            toast.error(error?.message, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+            });
+        }
     };
+
     return (
         <div className="mx-auto max-w-sm border rounded-xl p-6">
             <div className="flex flex-col items-center gap-2 mb-8">
@@ -93,12 +124,14 @@ const LoginPage = () => {
                 <div>
                     <Button
                         type="submit"
+                        disabled={isLoading}
                         className="w-full h-10 bg-orange-400 rounded-lg font-semibold"
                     >
-                        Sign In
+                        {isLoading ? "Signing In..." : "Sign In"}
                     </Button>
                 </div>
             </Form>
+
             <div className="flex items-center gap-4 my-5">
                 <div className="flex-1 h-px bg-gray-300"></div>
                 <span className="text-sm text-gray-500 font-medium uppercase">
@@ -106,10 +139,15 @@ const LoginPage = () => {
                 </span>
                 <div className="flex-1 h-px bg-gray-300"></div>
             </div>
-            <Button className="w-full h-10 rounded-lg" variant="tertiary">
-                <FcGoogle icon="devicon:google" />
-                Sign in with Google
-            </Button>
+
+            <LoginWithGoogle></LoginWithGoogle>
+
+            <p className="text-center mt-4 flex gap-1 justify-center">
+                Don&apos;t have an account?
+                <Link href={"/register"} className="text-orange-500">
+                    Sign up
+                </Link>
+            </p>
         </div>
     );
 };

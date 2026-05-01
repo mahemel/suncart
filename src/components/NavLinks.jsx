@@ -2,7 +2,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const NavLinks = () => {
+const NavLinks = ({ userSignedIn }) => {
     const pathname = usePathname();
 
     return (
@@ -23,14 +23,17 @@ const NavLinks = () => {
                     Products
                 </Link>
             </li>
-            <li>
-                <Link
-                    className={`${pathname === "/profile" ? "text-[#FF6900]" : ""} hover:text-[#FF6900] duration-300`}
-                    href={"/profile"}
-                >
-                    My Profile
-                </Link>
-            </li>
+
+            {userSignedIn && (
+                <li>
+                    <Link
+                        className={`${pathname === "/profile" ? "text-[#FF6900]" : ""} hover:text-[#FF6900] duration-300`}
+                        href={"/profile"}
+                    >
+                        My Profile
+                    </Link>
+                </li>
+            )}
         </>
     );
 };
