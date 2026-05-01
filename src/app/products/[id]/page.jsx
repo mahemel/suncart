@@ -21,7 +21,7 @@ const ProductsDetailPage = async ({ params }) => {
         return notFound();
     }
     return (
-        <div>
+        <div className="w-10/12 mx-auto">
             <Link
                 href="/products"
                 className="flex items-center gap-2 hover:text-orange-500"
@@ -30,9 +30,8 @@ const ProductsDetailPage = async ({ params }) => {
                 Back to all Products
             </Link>
 
-            <div className="grid grid-cols-1 md:grid-cols-8 mt-5 gap-15 justify-center">
-                <div className="col-span-1"></div>
-                <div className="rounded-xl overflow-hidden aspect-4/3 col-span-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 mt-5 gap-15 justify-center">
+                <div className="rounded-xl overflow-hidden aspect-4/3 border">
                     <Image
                         src={product.image}
                         alt={product.name}
@@ -42,7 +41,7 @@ const ProductsDetailPage = async ({ params }) => {
                     />
                 </div>
 
-                <div className="col-span-4 space-y-4">
+                <div className="space-y-4">
                     <div className="flex">
                         <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm font-medium capitalize">
                             {product.category}
