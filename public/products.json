@@ -6,7 +6,7 @@
         "price": 89.99,
         "rating": 4.8,
         "stock": 15,
-        "description": "Timeless aviator sunglasses with UV protection",
+        "description": "Timeless aviator sunglasses designed for everyday style and comfort. Provides full UV protection to keep your eyes safe under harsh sunlight. Lightweight frame ensures a secure fit for long hours of wear.",
         "image": "https://i.ibb.co.com/R4NCXxyC/1-sunglass.jpg",
         "category": "Accessories"
     },
@@ -17,7 +17,7 @@
         "price": 24.99,
         "rating": 4.9,
         "stock": 25,
-        "description": "Water-resistant broad spectrum sunscreen",
+        "description": "High-performance sunscreen lotion with SPF 50 for maximum protection. Water-resistant formula makes it ideal for beach and outdoor use. Helps prevent sunburn while keeping your skin hydrated and smooth.",
         "image": "https://i.ibb.co.com/pFMzLf5/2-sunscreen.jpg",
         "category": "Skincare"
     },
@@ -28,7 +28,7 @@
         "price": 34.99,
         "rating": 4.7,
         "stock": 12,
-        "description": "Wide-brim straw hat perfect for beach days",
+        "description": "Stylish wide-brim straw hat perfect for sunny beach days. Provides excellent shade and protection from direct sunlight. Lightweight and breathable design keeps you cool and comfortable.",
         "image": "https://i.ibb.co.com/PG7SsS6f/3-hat.jpg",
         "category": "Accessories"
     },
@@ -39,7 +39,7 @@
         "price": 59.99,
         "rating": 4.6,
         "stock": 8,
-        "description": "Lightweight floral dress for summer",
+        "description": "Elegant floral dress crafted for warm summer days. Made from lightweight fabric that feels soft against the skin. Perfect for casual outings, beach trips, or daytime events.",
         "image": "https://i.ibb.co.com/0p4Q7qqr/4-dress.jpg",
         "category": "Clothing"
     },
@@ -50,7 +50,7 @@
         "price": 39.99,
         "rating": 4.5,
         "stock": 20,
-        "description": "Soft, absorbent beach towel set of 2",
+        "description": "Soft and absorbent beach towel set designed for comfort. Quick-drying fabric makes it ideal for repeated use. Comes in a set of two, perfect for sharing or extra convenience.",
         "image": "https://i.ibb.co.com/yBk23ctY/5-towel.jpg",
         "category": "Accessories"
     },
@@ -61,7 +61,7 @@
         "price": 44.99,
         "rating": 4.7,
         "stock": 18,
-        "description": "Quick-dry swim shorts with tropical print",
+        "description": "Trendy swim shorts featuring a vibrant tropical print. Quick-dry material ensures comfort both in and out of water. Elastic waistband provides a secure and adjustable fit.",
         "image": "https://i.ibb.co.com/C32BP0sY/6-shorts.jpg",
         "category": "Clothing"
     },
@@ -72,7 +72,7 @@
         "price": 119.99,
         "rating": 4.9,
         "stock": 10,
-        "description": "High-performance polarized sunglasses",
+        "description": "High-performance sunglasses built for active lifestyles. Polarized lenses reduce glare and enhance visual clarity. Durable frame ensures long-lasting use during outdoor activities.",
         "image": "https://i.ibb.co.com/MySbf272/7-sunglass.jpg",
         "category": "Accessories"
     },
@@ -83,7 +83,7 @@
         "price": 18.99,
         "rating": 4.6,
         "stock": 30,
-        "description": "Refreshing facial mist with aloe vera",
+        "description": "Refreshing face mist enriched with natural ingredients. Helps hydrate and revitalize tired or dry skin instantly. Perfect for daily use, especially during hot summer days.",
         "image": "https://i.ibb.co.com/nsZCTXx4/8-face-mist.jpg",
         "category": "Skincare"
     },
@@ -94,7 +94,7 @@
         "price": 29.99,
         "rating": 4.4,
         "stock": 22,
-        "description": "Spacious waterproof tote for beach essentials",
+        "description": "Spacious beach bag designed to carry all your essentials. Waterproof material keeps your belongings safe and dry. Durable and stylish design makes it perfect for travel and beach trips.",
         "image": "https://i.ibb.co.com/sfdGVsh/9-bag.jpg",
         "category": "Accessories"
     }

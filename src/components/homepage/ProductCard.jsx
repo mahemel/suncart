@@ -7,13 +7,13 @@ const ProductCard = ({ product }) => {
     return (
         <Card
             style={{ backgroundImage: `url(${product.image})` }}
-            className="p-0 rounded-lg md:rounded-2xl relative flex flex-col justify-end bg-cover bg-center gap-0"
+            className="p-0 rounded-lg md:rounded-2xl relative flex flex-col justify-end bg-cover bg-center gap-0 border"
         >
             <div className="aspect-4/3 w-full relative">
                 <Image
                     alt="NEO Home Robot"
                     aria-hidden="true"
-                    className="absolute h-full w-full object-cover"
+                    className="absolute h-full w-full object-cover object-top"
                     src={product.image}
                     width={200}
                     height={200}
