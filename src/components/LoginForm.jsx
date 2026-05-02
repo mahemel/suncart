@@ -10,7 +10,7 @@ import {
     Label,
     TextField,
 } from "@heroui/react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { IoIosEyeOff } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
@@ -19,6 +19,9 @@ import { toast } from "react-toastify";
 const LoginForm = () => {
     const [isVisible, setIsVisible] = useState(false);
     const router = useRouter();
+    const searchParams = useSearchParams();
+
+    const callbackUrl = searchParams.get("callbackUrl") || "/";
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -42,7 +45,7 @@ const LoginForm = () => {
         }
 
         if (!error) {
-            router.push("/");
+            router.replace(callbackUrl);
         }
     };
     return (

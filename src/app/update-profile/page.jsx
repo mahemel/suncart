@@ -56,6 +56,7 @@ const UpdateProfilePage = () => {
                 <Form className="flex flex-col gap-4" onSubmit={onSubmit}>
                     <TextField
                         name="name"
+                        isRequired
                         validate={(value) => {
                             if (value.length < 3) {
                                 return "Name must be at least 3 characters";
@@ -72,12 +73,15 @@ const UpdateProfilePage = () => {
                     </TextField>
                     <TextField
                         name="image"
+                        isRequired
                         validate={(value) => {
                             const urlPattern =
                                 /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/i;
+
                             if (value && !urlPattern.test(value)) {
                                 return "Please enter a valid URL (e.g., https://example.com/image.jpg)";
                             }
+
                             return null;
                         }}
                     >

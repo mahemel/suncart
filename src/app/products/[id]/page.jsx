@@ -54,31 +54,33 @@ const ProductsDetailPage = async ({ params }) => {
 
                 <div className="space-y-4">
                     <div className="flex">
-                        <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm font-medium capitalize">
+                        <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm font-medium capitalize animate__animated animate__fadeInUp">
                             {product.category}
                         </span>
                     </div>
 
-                    <h1 className="text-2xl md:text-3xl font-bold">
+                    <h1 className="text-2xl md:text-3xl font-bold animate__animated animate__fadeInUp">
                         {product.name}
                     </h1>
 
-                    <p className="text-gray-700">{product.description}</p>
+                    <p className="text-gray-700 animate__animated animate__fadeInUp">
+                        {product.description}
+                    </p>
 
-                    <p className="text-gray-600 font-semibold">
+                    <p className="text-gray-600 font-semibold animate__animated animate__fadeInUp">
                         Brand: {product.brand}
                     </p>
 
-                    <p className="flex items-center font-semibold gap-1">
+                    <p className="flex items-center font-semibold gap-1 animate__animated animate__fadeInUp">
                         <FaStar className="text-orange-600" />
                         {product.rating}
                     </p>
 
-                    <p className="text-4xl font-bold text-orange-600">
+                    <p className="text-4xl font-bold text-orange-600 animate__animated animate__fadeInUp">
                         ${product.price}
                     </p>
 
-                    <p>
+                    <p className=" animate__animated animate__fadeInUp">
                         {product.stock > 15 ? (
                             <span className="text-green-600 font-semibold flex items-center gap-2">
                                 <FaCheck />
@@ -94,10 +96,9 @@ const ProductsDetailPage = async ({ params }) => {
                     <Link
                         href={"#"}
                         className={
-                            "btn  bg-linear-to-r from-[#c21500] via-[#ffc500] to-[#c21500] font-semibold text-sm leading-12 px-5 rounded-full w-6/12"
+                            "btn  bg-linear-to-r from-[#c21500] via-[#ffc500] to-[#c21500] font-semibold text-sm leading-12 px-5 rounded-full w-6/12b"
                         }
                     >
-                        {" "}
                         Buy Now
                     </Link>
                 </div>
