@@ -1,5 +1,4 @@
 import { getProductsData } from "@/lib/data";
-import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,10 +7,22 @@ import { BiArrowBack } from "react-icons/bi";
 import { FaCheck, FaStar } from "react-icons/fa";
 import { TbRotateClockwise, TbShield, TbTruck } from "react-icons/tb";
 
+export async function generateMetadata({ params }) {
+    const { id } = await params;
+
+    const getAllProducts = await getProductsData();
+
+    const product = getAllProducts.find(
+        (productItem) => productItem.id === parseInt(id),
+    );
+    return {
+        title: `SunCart | ${product.name}`,
+    };
+}
+
 const ProductsDetailPage = async ({ params }) => {
     const { id } = await params;
     const getAllProducts = await getProductsData();
-    console.log(getAllProducts);
 
     const product = getAllProducts.find(
         (productItem) => productItem.id === parseInt(id),

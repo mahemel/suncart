@@ -11,6 +11,9 @@ const interFont = Inter({
 export const metadata = {
   title: "SunCart",
   description: "Summer Essentials Store",
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({ children }) {

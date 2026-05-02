@@ -1,6 +1,10 @@
 import ProductCard from "@/components/homepage/ProductCard";
 import { getProductsData } from "@/lib/data";
 
+export const metadata = {
+    title: "SunCart | Products",
+};
+
 const ProductsPage = async () => {
     const allProducts = await getProductsData();
 

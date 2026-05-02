@@ -6,6 +6,7 @@ import NavLinks from "./NavLinks";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Button, Spinner } from "@heroui/react";
+import { getInitials } from "@/lib/data";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,10 @@ const Navbar = () => {
 
     const userSignedIn = session?.user;
 
-    console.log(session?.user);
+    let altName = "";
+    if (session?.user) {
+        altName = getInitials(session?.user?.name);
+    }
 
     const handleUserSignOut = async () => {
         await authClient.signOut();
@@ -96,13 +100,11 @@ const Navbar = () => {
                         <div className="flex gap-2 items-center">
                             <Avatar>
                                 <Avatar.Image
-                                    alt={userSignedIn?.name}
+                                    alt={altName}
                                     src={userSignedIn?.image}
                                     referrerPolicy="no-referrer"
                                 />
-                                <Avatar.Fallback>
-                                    {userSignedIn?.name}
-                                </Avatar.Fallback>
+                                <Avatar.Fallback>{altName}</Avatar.Fallback>
                             </Avatar>
 
                             <Button

@@ -1,6 +1,10 @@
 import { Button, Card } from "@heroui/react";
 import Image from "next/image";
 
+export const metadata = {
+    title: "SunCart | My Profile",
+};
+
 const ProfilePage = () => {
     return (
         <div>
