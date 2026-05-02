@@ -1,14 +1,32 @@
+// import { NextResponse } from 'next/server'
+// import { auth } from './lib/auth'
+// import { headers } from 'next/headers'
+
+// export async function proxy(request) {
+//     const session = await auth.api.getSession({
+//         headers: await headers()
+//     })
+//     if (!session) {
+//         return NextResponse.redirect(new URL('/login', request.url))
+//     }
+// }
+
+// export const config = {
+//     matcher: ['/profile', '/update-profile', '/products/:path'],
+// }
+
 import { NextResponse } from "next/server";
 import { auth } from "./lib/auth";
 
 export async function proxy(request) {
     const { pathname } = request.nextUrl;
 
+
     const session = await auth.api.getSession({
         headers: request.headers,
     });
 
-    const isLoggedInUserPaths = pathname.startsWith("/login") || pathname.startsWith("/register");
+    const isLoggedInUserPaths = pathname.startsWith("/register");
 
     const isProtected =
         pathname.startsWith("/products/") ||
@@ -19,18 +37,18 @@ export async function proxy(request) {
     if (isLoggedInUserPaths && session) {
         return NextResponse.redirect(new URL('/', request.url))
     }
-    const sessionCookie = request.cookies.get("better-auth.session_token");
-    if (isProtected && !sessionCookie) {
 
-        const callbackUrl = new URL('/login', request.url);
-        callbackUrl.searchParams.set('callbackUrl', request.nextUrl.pathname);
-        return NextResponse.redirect(callbackUrl);
+    if (isProtected && !session) {
+        const callbackUrl = pathname;
 
+        return NextResponse.redirect(
+            new URL(`/login?callbackUrl=${encodeURIComponent(callbackUrl)}`, request.url)
+        );
     }
 
     return NextResponse.next();
 }
 
 export const config = {
-    matcher: ["/products/:path*", "/profile", "/update-profile", "/login", "/register"],
+    matcher: ["/products/:path*", "/profile", "/update-profile", "/register"],
 };
