@@ -138,4 +138,3 @@ const ProductsDetailPage = async ({ params }) => {
 };
 
 export default ProductsDetailPage;
-<h2>Product Id: </h2>;

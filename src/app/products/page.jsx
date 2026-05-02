@@ -11,16 +11,16 @@ const ProductsPage = async () => {
     return (
         <div>
             <div className="flex justify-center mb-2">
-                <h2 className="text-center text-3xl font-black bg-linear-to-r from-yellow-700 via-orange-500 to-purple-700 text-transparent bg-clip-text">
+                <h2 className="text-center text-3xl font-black bg-linear-to-r from-yellow-700 via-orange-500 to-purple-700 text-transparent bg-clip-text animate__animated animate__fadeInUp">
                     Our Products
                 </h2>
             </div>
-            <p className="text-center mb-7">
+            <p className="text-center mb-7 animate__animated animate__fadeInUp">
                 Everything you need to enjoy summer to the fullest—lightweight,
                 stylish, and made for the sun.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate__animated animate__fadeIn">
                 {allProducts.map((product) => (
                     <ProductCard
                         key={product.id}

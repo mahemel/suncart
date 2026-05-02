@@ -1,14 +1,28 @@
-import { Card } from "@heroui/react";
-import Image from "next/image";
+import { auth } from "@/lib/auth";
+import { getInitials } from "@/lib/data";
+import { Avatar, Button, Card } from "@heroui/react";
+import { headers } from "next/headers";
+import Link from "next/link";
+import { FaPen } from "react-icons/fa";
 
 export const metadata = {
     title: "SunCart | My Profile",
 };
 
-const ProfilePage = () => {
+const ProfilePage = async () => {
+    const session = await auth.api.getSession({
+        headers: await headers(),
+    });
+
+    let altName = "";
+    if (session?.user) {
+        altName = getInitials(session?.user?.name);
+    }
+    console.log(session?.user);
+
     return (
         <div>
-            <div className="flex justify-center mb-2">
+            <div className="flex justify-center mb-2 animate__animated animate__fadeIn">
                 <h2 className="text-center text-3xl font-black bg-linear-to-r from-yellow-700 via-orange-500 to-purple-700 text-transparent bg-clip-text">
                     Your Profile
                 </h2>
@@ -17,27 +31,53 @@ const ProfilePage = () => {
                 Manage your account and view your orders
             </p>
 
-            <Card className="w-full max-w-120 mx-auto p-0 rounded-none shadow-none">
+            <Card className="w-full max-w-120 mx-auto p-0 rounded-none shadow-none space-y-5">
                 <div className="relative w-50 h-50 mx-auto">
-                    <Image
-                        src={"/coconut-tree.jpg"}
-                        className="object-cover rounded-full w-50 h-50"
-                        width={200}
-                        height={200}
-                        alt="Mahbub Hasan"
-                    />
+                    <Avatar className="w-50 h-50 block">
+                        <Avatar.Image
+                            alt={altName}
+                            src={session?.user?.image}
+                            referrerPolicy="no-referrer"
+                        />
+                        <Avatar.Fallback className="text-4xl">
+                            {altName}
+                        </Avatar.Fallback>
+                    </Avatar>
                 </div>
 
-                <div className="gap-3 text-center">
-                    <Card.Header className="gap-1">
-                        <Card.Title>Mahbub Hasan</Card.Title>
-                        <Card.Description>
-                            john.doe@example.com
+                <div className="text-center space-y-5">
+                    <Card.Header className="text-center space-y-5">
+                        <Card.Title className="text-2xl">
+                            {session.user.name}
+                        </Card.Title>
+                        <Card.Description className="text-xl">
+                            {session.user.email}
                         </Card.Description>
                     </Card.Header>
-                    <p>Member Since: 2026/04/30</p>
+                    <p>
+                        Member Since:
+                        {new Date(session.user.createdAt).toLocaleDateString(
+                            "en-US",
+                            {
+                                month: "short",
+                                day: "2-digit",
+                                year: "numeric",
+                            },
+                        )}
+                    </p>
                 </div>
             </Card>
+
+            <div className="flex justify-center mt-8">
+                <Link href={"/update-profile"}>
+                    <Button variant="secondary">
+                        <FaPen />
+                        <span className="text-base">
+                            Update Profile Information
+                        </span>
+                    </Button>
+                </Link>
+            </div>
         </div>
     );
 };

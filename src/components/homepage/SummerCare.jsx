@@ -12,15 +12,15 @@ const SummerCare = () => {
             <div className="absolute inset-0 w-screen bg-amber-100 left-1/2 -translate-x-1/2"></div>
             <div className="relative">
                 <div className="flex justify-center mb-2 ">
-                    <h2 className="text-center text-3xl font-black bg-linear-to-r from-yellow-700 via-orange-500 to-purple-700 text-transparent bg-clip-text">
+                    <h2 className="text-center text-3xl font-black bg-linear-to-r from-yellow-700 via-orange-500 to-purple-700 text-transparent bg-clip-text animate__animated animate__fadeInUp">
                         ☀️ Summer Care Tips
                     </h2>
                 </div>
-                <p className="text-center mb-7">
+                <p className="text-center mb-7 animate__animated animate__fadeInUp">
                     Essential tips for a safe and enjoyable summer.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-5 animate__animated animate__fadeInUp">
                     <Card>
                         <Card.Header className="items-center text-center space-y-3">
                             <div className="w-10 h-10 flex items-center justify-center rounded-full bg-amber-200">

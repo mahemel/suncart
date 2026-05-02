@@ -8,7 +8,7 @@ const Products = async () => {
     return (
         <div className="py-15">
             <div className="flex justify-center mb-7">
-                <h2 className="text-center text-3xl font-black bg-linear-to-r from-yellow-700 via-orange-500 to-purple-700 text-transparent bg-clip-text">
+                <h2 className="text-center text-3xl font-black bg-linear-to-r from-yellow-700 via-orange-500 to-purple-700 text-transparent bg-clip-text animate__animated animate__fadeInUp">
                     Popular Products
                 </h2>
             </div>
@@ -20,15 +20,6 @@ const Products = async () => {
                         product={product}
                     ></ProductCard>
                 ))}
-            </div>
-
-            <div className="flex justify-center">
-                <Link
-                    href={"/products"}
-                    className="btn  bg-linear-to-r from-[#c21500] via-[#ffc500] to-[#c21500] font-semibold text-sm leading-12 px-7 rounded-full mt-8"
-                >
-                    View All Products
-                </Link>
             </div>
         </div>
     );

@@ -15,7 +15,7 @@ const RegisterPage = async () => {
         redirect("/");
     }
     return (
-        <div className="mx-auto max-w-sm border rounded-xl p-6">
+        <div className="mx-auto max-w-sm border rounded-xl p-6  animate__animated animate__fadeIn">
             <div className="flex flex-col items-center gap-2 mb-8">
                 <MdSunny size={32} />
                 <h2 className="font-bold text-xl">Register Account</h2>
