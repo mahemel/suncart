@@ -7,10 +7,12 @@ import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Button, Spinner } from "@heroui/react";
 import { getInitials } from "@/lib/data";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { data: session, isPending } = authClient.useSession();
+    const router = useRouter();
 
     const userSignedIn = session?.user;
 
@@ -21,6 +23,7 @@ const Navbar = () => {
 
     const handleUserSignOut = async () => {
         await authClient.signOut();
+        router.replace("/");
     };
 
     return (

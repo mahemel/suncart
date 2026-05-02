@@ -1,4 +1,4 @@
-import { Button, Card } from "@heroui/react";
+import { Card } from "@heroui/react";
 import Image from "next/image";
 
 export const metadata = {
