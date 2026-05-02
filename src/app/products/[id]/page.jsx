@@ -32,7 +32,7 @@ const ProductsDetailPage = async ({ params }) => {
         return notFound();
     }
     return (
-        <div className="w-10/12 mx-auto">
+        <div className="w-full xl:w-10/12 mx-auto">
             <Link
                 href="/products"
                 className="flex items-center gap-2 hover:text-orange-500"
@@ -41,7 +41,7 @@ const ProductsDetailPage = async ({ params }) => {
                 Back to all Products
             </Link>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 mt-5 gap-15 justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 mt-5 gap-10 lg:gap-15 justify-center">
                 <div className="rounded-xl overflow-hidden aspect-4/3 border">
                     <Image
                         src={product.image}
@@ -59,7 +59,7 @@ const ProductsDetailPage = async ({ params }) => {
                         </span>
                     </div>
 
-                    <h1 className="text-2xl md:text-3xl font-bold animate__animated animate__fadeInUp">
+                    <h1 className="text-2xl lg:text-[28px] xl:text-3xl font-bold animate__animated animate__fadeInUp">
                         {product.name}
                     </h1>
 
@@ -115,7 +115,7 @@ const ProductsDetailPage = async ({ params }) => {
                     </div>
                 </div>
 
-                <div className="flex flex-col items-center gap-3 px-1 md:border-l md:border-r py-5 ">
+                <div className="flex flex-col items-center gap-3 px-1 border-t md:border-t-0 border-b md:border-b-0 md:border-l md:border-r py-5 ">
                     <TbShield className="text-3xl text-orange-500" />
                     <div className="text-center">
                         <h4 className="font-semibold">Secure Payment</h4>

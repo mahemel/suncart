@@ -21,10 +21,11 @@ export async function proxy(request) {
     }
 
     if (isProtected && !session) {
-        const callbackUrl = pathname;
+        const callbackUrl = encodeURIComponent(pathname);
+        console.log(callbackUrl)
 
         return NextResponse.redirect(
-            new URL(`/login?callbackUrl=${encodeURIComponent(callbackUrl)}`, request.url)
+            new URL(`/login?callbackUrl=${callbackUrl}`, request.url)
         );
     }
 

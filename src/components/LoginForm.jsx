@@ -21,7 +21,7 @@ const LoginForm = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
 
-    const callbackUrl = searchParams.get("callbackUrl") || "/";
+    const callbackUrl = searchParams.get("callbackUrl");
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -45,7 +45,7 @@ const LoginForm = () => {
         }
 
         if (!error) {
-            router.replace(callbackUrl);
+            router.replace(callbackUrl ? decodeURIComponent(callbackUrl) : "/");
         }
     };
     return (

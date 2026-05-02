@@ -25,8 +25,10 @@ const ProductCard = ({ product }) => {
                 <span className="text-sm">{product.rating}</span>
             </div>
 
-            <div className="glass-bg relative p-4">
-                <h2 className="text-2xl font-bold mb-5">{product.name}</h2>
+            <div className="glass-bg relative p-4 md:p-2 lg:p-4">
+                <h2 className="text-xl md:text-[14px] lg:text-lg xl:text-2xl font-bold mb-5">
+                    {product.name}
+                </h2>
 
                 <Card.Footer className="z-10 block">
                     <div className="grid grid-cols-6 items-center">
@@ -34,14 +36,14 @@ const ProductCard = ({ product }) => {
                             <p className="text-sm font-bold leading-none">
                                 PRICE
                             </p>
-                            <p className="text-xl font-bold leading-none">
+                            <p className="text-base lg:text-xl font-bold leading-none">
                                 ${product.price}
                             </p>
                         </div>
 
                         <Link
                             href={`/products/${product.id}`}
-                            className="btn col-span-4  bg-linear-to-r from-[#c21500] via-[#ffc500] to-[#c21500] font-semibold text-sm leading-8 sm:leading-12 px-3 rounded-full"
+                            className="btn col-span-4  bg-linear-to-r from-[#c21500] via-[#ffc500] to-[#c21500] font-semibold text-sm leading-10 lg:leading-12 px-2 lg:px-3 rounded-full"
                         >
                             View Details
                         </Link>

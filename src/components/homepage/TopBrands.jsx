@@ -18,8 +18,8 @@ const TopBrands = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
                     <Card>
                         <Card.Header className="items-center text-center space-y-3">
-                            <FcPaid size={100} />
-                            <Card.Title className="font-bold text-xl">
+                            <FcPaid className="text-[60px] lg:text-[80px] xl:text-[100px]" />
+                            <Card.Title className="font-bold text-base xl:text-xl">
                                 SunShield
                             </Card.Title>
                         </Card.Header>
@@ -27,8 +27,8 @@ const TopBrands = () => {
 
                     <Card>
                         <Card.Header className="items-center text-center space-y-3">
-                            <FcLandscape size={100} />
-                            <Card.Title className="font-bold text-xl">
+                            <FcLandscape className="text-[60px] lg:text-[80px] xl:text-[100px]" />
+                            <Card.Title className="font-bold text-base xl:text-xl">
                                 BeachWave
                             </Card.Title>
                         </Card.Header>
@@ -36,8 +36,8 @@ const TopBrands = () => {
 
                     <Card>
                         <Card.Header className="items-center text-center space-y-3">
-                            <FcDebian size={100} />
-                            <Card.Title className="font-bold text-xl">
+                            <FcDebian className="text-[60px] lg:text-[80px] xl:text-[100px]" />
+                            <Card.Title className="font-bold text-base xl:text-xl">
                                 SummerStyle
                             </Card.Title>
                         </Card.Header>
@@ -45,8 +45,8 @@ const TopBrands = () => {
 
                     <Card>
                         <Card.Header className="items-center text-center space-y-3">
-                            <FcCloseUpMode size={100} />
-                            <Card.Title className="font-bold text-xl">
+                            <FcCloseUpMode className="text-[60px] lg:text-[80px] xl:text-[100px]" />
+                            <Card.Title className="font-bold text-base xl:text-xl">
                                 TropicGear
                             </Card.Title>
                         </Card.Header>
