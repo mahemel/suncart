@@ -19,14 +19,13 @@ export async function proxy(request) {
     if (isLoggedInUserPaths && session) {
         return NextResponse.redirect(new URL('/', request.url))
     }
+    const sessionCookie = request.cookies.get("better-auth.session_token");
+    if (isProtected && !sessionCookie) {
 
-    if (isProtected && !session) {
-        const callbackUrl = encodeURIComponent(pathname);
-        console.log(callbackUrl)
+        const callbackUrl = new URL('/login', request.url);
+        callbackUrl.searchParams.set('callbackUrl', request.nextUrl.pathname);
+        return NextResponse.redirect(callbackUrl);
 
-        return NextResponse.redirect(
-            new URL(`/login?callbackUrl=${callbackUrl}`, request.url)
-        );
     }
 
     return NextResponse.next();

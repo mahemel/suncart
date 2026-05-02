@@ -19,9 +19,11 @@ import { toast } from "react-toastify";
 const LoginForm = () => {
     const [isVisible, setIsVisible] = useState(false);
     const router = useRouter();
-    const searchParams = useSearchParams();
 
-    const callbackUrl = searchParams.get("callbackUrl");
+    const searchParams = useSearchParams();
+    const callbackUrl = searchParams.get("callbackUrl") || "/";
+
+    console.log(callbackUrl);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -32,6 +34,7 @@ const LoginForm = () => {
         const { data, error } = await authClient.signIn.email({
             email,
             password,
+            callbackUrl: callbackUrl,
         });
 
         if (error?.message) {
@@ -45,7 +48,7 @@ const LoginForm = () => {
         }
 
         if (!error) {
-            router.replace(callbackUrl ? decodeURIComponent(callbackUrl) : "/");
+            router.push(callbackUrl);
         }
     };
     return (
