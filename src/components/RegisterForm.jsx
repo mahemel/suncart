@@ -68,19 +68,7 @@ const RegisterForm = () => {
                 />
                 <FieldError />
             </TextField>
-            <TextField
-                name="image"
-                isRequired
-                validate={(value) => {
-                    if (!value) return "Photo URL is required";
-                    const urlPattern =
-                        /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/i;
-                    if (!urlPattern.test(value)) {
-                        return "Please enter a valid URL (e.g., https://example.com/image.jpg)";
-                    }
-                    return null;
-                }}
-            >
+            <TextField name="image" isRequired type="url">
                 <Label>Your Photo URL</Label>
                 <Input
                     placeholder="https://example.com/your-photo.jpg"
