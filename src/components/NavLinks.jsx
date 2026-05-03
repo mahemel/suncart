@@ -24,16 +24,14 @@ const NavLinks = ({ userSignedIn }) => {
                 </Link>
             </li>
 
-            {userSignedIn && (
-                <li>
-                    <Link
-                        className={`${pathname === "/profile" ? "text-[#FF6900]" : ""} hover:text-[#FF6900] duration-300`}
-                        href={"/profile"}
-                    >
-                        My Profile
-                    </Link>
-                </li>
-            )}
+            <li>
+                <Link
+                    className={`${pathname === "/profile" ? "text-[#FF6900]" : ""} hover:text-[#FF6900] duration-300`}
+                    href={"/profile"}
+                >
+                    My Profile
+                </Link>
+            </li>
         </>
     );
 };
