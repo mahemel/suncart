@@ -10,12 +10,12 @@ export const metadata = {
     title: "SunCart | Login",
 };
 const LoginPage = async () => {
-    const session = await auth.api.getSession({
-        headers: await headers(),
-    });
-    if (session) {
-        redirect("/");
-    }
+    // const session = await auth.api.getSession({
+    //     headers: await headers(),
+    // });
+    // if (session) {
+    //     redirect("/");
+    // }
 
     return (
         <div className="mx-auto max-w-sm border rounded-xl p-6 animate__animated animate__fadeIn">

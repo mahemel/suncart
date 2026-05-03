@@ -1,22 +1,18 @@
-import { NextResponse } from "next/server";
-import { auth } from "./lib/auth";
+import { NextResponse } from 'next/server'
+import { auth } from './lib/auth'
+import { headers } from 'next/headers';
 
 export async function proxy(request) {
     const { pathname } = request.nextUrl;
 
-
     const session = await auth.api.getSession({
-        headers: request.headers,
-    });
+        headers: await headers()
+    })
+    const isProtectedRoute = pathname.startsWith('/products/');
 
-
-    const isProtected = pathname.startsWith("/products/");
-
-    if (isProtected && !session) {
-        const callbackUrl = pathname;
-
+    if (isProtectedRoute && !session) {
         return NextResponse.redirect(
-            new URL(`/login?callbackUrl=${encodeURIComponent(callbackUrl)}`, request.url)
+            new URL(`/login?callbackUrl=${encodeURIComponent(pathname)}`, request.url)
         );
     }
 
@@ -24,5 +20,6 @@ export async function proxy(request) {
 }
 
 export const config = {
-    matcher: ["/products/:path*",],
-};
+    matcher: ['/products/:path*'],
+}
+
