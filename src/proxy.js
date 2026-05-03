@@ -9,17 +9,8 @@ export async function proxy(request) {
         headers: request.headers,
     });
 
-    const isLoggedInUserPaths = pathname.startsWith("/register");
 
-    const isProtected =
-        pathname.startsWith("/products/") ||
-        pathname.startsWith("/profile") ||
-        pathname.startsWith("/update-profile");
-
-
-    if (isLoggedInUserPaths && session) {
-        return NextResponse.redirect(new URL('/', request.url))
-    }
+    const isProtected = pathname.startsWith("/products/");
 
     if (isProtected && !session) {
         const callbackUrl = pathname;
@@ -33,5 +24,5 @@ export async function proxy(request) {
 }
 
 export const config = {
-    matcher: ["/products/:path*", "/profile", "/update-profile", "/register"],
+    matcher: ["/products/:path*",],
 };

@@ -3,6 +3,7 @@ import { getInitials } from "@/lib/data";
 import { Avatar, Button, Card } from "@heroui/react";
 import { headers } from "next/headers";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { FaPen } from "react-icons/fa";
 
 export const metadata = {
@@ -18,7 +19,10 @@ const ProfilePage = async () => {
     if (session?.user) {
         altName = getInitials(session?.user?.name);
     }
-    console.log(session?.user);
+
+    if (!session) {
+        redirect("/login?callbackUrl=/profile");
+    }
 
     return (
         <div>
