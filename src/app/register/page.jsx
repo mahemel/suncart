@@ -1,12 +1,22 @@
 import LoginWithGoogle from "@/components/LoginWithGoogle";
 import RegisterForm from "@/components/RegisterForm";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { MdSunny } from "react-icons/md";
 
 export const metadata = {
     title: "SunCart | Register",
 };
 const RegisterPage = async () => {
+    const session = await auth.api.getSession({
+        headers: await headers(),
+    });
+    if (session) {
+        redirect("/");
+    }
+
     return (
         <div className="mx-auto max-w-sm border rounded-xl p-6  animate__animated animate__fadeIn">
             <div className="flex flex-col items-center gap-2 mb-8">
