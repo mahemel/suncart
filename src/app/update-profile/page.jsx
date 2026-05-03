@@ -14,18 +14,13 @@ import { toast } from "react-toastify";
 
 const UpdateProfilePage = () => {
     const router = useRouter();
-
     const { data: session } = authClient.useSession();
 
     const onSubmit = async (event) => {
         event.preventDefault();
 
         const name = event.target.name.value;
-        let image = event.target.image.value;
-
-        if (image.length === 0) {
-            image = session?.user?.image;
-        }
+        let image = event.target.image.value || session?.user?.image;
 
         const { data, error } = await authClient.updateUser({
             name,
@@ -39,10 +34,13 @@ const UpdateProfilePage = () => {
                 closeOnClick: true,
                 pauseOnHover: true,
             });
-            setTimeout(() => {
-                router.replace("/profile");
-            }, 500);
+
+            router.replace("/profile");
+
+            return;
         }
+
+        toast.error(error.message || "Update failed");
     };
     return (
         <div>
@@ -71,20 +69,7 @@ const UpdateProfilePage = () => {
                         />
                         <FieldError />
                     </TextField>
-                    <TextField
-                        name="image"
-                        isRequired
-                        validate={(value) => {
-                            const urlPattern =
-                                /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/i;
-
-                            if (value && !urlPattern.test(value)) {
-                                return "Please enter a valid URL (e.g., https://example.com/image.jpg)";
-                            }
-
-                            return null;
-                        }}
-                    >
+                    <TextField name="image" isRequired type="url">
                         <Label>Your Photo URL</Label>
                         <Input
                             placeholder="https://example.com/your-photo.jpg"

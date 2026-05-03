@@ -8,7 +8,7 @@ export async function proxy(request) {
     const session = await auth.api.getSession({
         headers: await headers()
     })
-    const isProtectedRoute = pathname.startsWith('/products/');
+    const isProtectedRoute = pathname.startsWith('/products/') || pathname.startsWith('/profile') || pathname.startsWith('/update-profile');
 
     if (isProtectedRoute && !session) {
         return NextResponse.redirect(
@@ -20,6 +20,6 @@ export async function proxy(request) {
 }
 
 export const config = {
-    matcher: ['/products/:path*'],
+    matcher: ['/products/:path*', '/profile/:path*', '/update-profile/:path*'],
 }
 

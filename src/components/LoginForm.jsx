@@ -35,8 +35,6 @@ const LoginForm = () => {
             callbackURL: redirectTo,
         });
 
-        console.log(data);
-
         if (error?.message) {
             toast.error(error?.message, {
                 position: "top-center",

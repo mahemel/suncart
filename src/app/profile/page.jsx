@@ -15,13 +15,10 @@ const ProfilePage = async () => {
         headers: await headers(),
     });
 
-    let altName = "";
-    if (session?.user) {
-        altName = getInitials(session?.user?.name);
-    }
+    const altName = session?.user?.name ? getInitials(session.user.name) : "U";
 
     if (!session) {
-        redirect("/login?callbackUrl=/profile");
+        redirect("/login?redirectTo=/profile");
     }
 
     return (
