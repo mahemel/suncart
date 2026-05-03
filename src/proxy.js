@@ -12,7 +12,7 @@ export async function proxy(request) {
 
     if (isProtectedRoute && !session) {
         return NextResponse.redirect(
-            new URL(`/login?callbackUrl=${encodeURIComponent(pathname)}`, request.url)
+            new URL(`/login?redirectTo=${encodeURIComponent(pathname)}`, request.url)
         );
     }
 

@@ -21,9 +21,7 @@ const LoginForm = () => {
     const router = useRouter();
 
     const searchParams = useSearchParams();
-    const callbackUrl = searchParams.get("callbackUrl") || "/";
-
-    console.log(callbackUrl);
+    const redirectTo = searchParams.get("redirectTo") || "/";
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -34,8 +32,10 @@ const LoginForm = () => {
         const { data, error } = await authClient.signIn.email({
             email,
             password,
-            // callbackUrl: callbackUrl,
+            callbackURL: redirectTo,
         });
+
+        console.log(data);
 
         if (error?.message) {
             toast.error(error?.message, {
@@ -45,10 +45,7 @@ const LoginForm = () => {
                 closeOnClick: true,
                 pauseOnHover: true,
             });
-        }
-
-        if (!error) {
-            router.push(callbackUrl);
+            return;
         }
     };
     return (
